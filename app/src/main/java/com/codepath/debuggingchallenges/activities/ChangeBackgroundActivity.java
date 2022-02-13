@@ -1,20 +1,36 @@
 package com.codepath.debuggingchallenges.activities;
 
+
 import android.graphics.Color;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 
 import com.codepath.debuggingchallenges.R;
 
 public class ChangeBackgroundActivity extends AppCompatActivity {
 
     private int oldColor = Color.BLUE;
+    Button btnGo;
+    View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_background);
+        btnGo = findViewById(R.id.btnGo);
+        view = findViewById(R.id.view);
+
+        //onGoClick(view);
+        btnGo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onGoClick(view);
+            }
+        });
+
+
     }
 
     public void onGoClick(View view) {
